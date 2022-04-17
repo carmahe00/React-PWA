@@ -42,5 +42,11 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      const isProduction = ("%NODE_ENV%" === "production") //Variable env para verificar si esta em production(React)
+      if(isProduction && "serviceWorker" in navigator){
+        navigator.serviceWorker.register("sw.js") // Registra service-worker
+      }
+    </script>
   </body>
 </html>
